@@ -1,4 +1,6 @@
-﻿using Terraria.ID;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace StarterMod.Items.TheShrug
@@ -12,11 +14,11 @@ namespace StarterMod.Items.TheShrug
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 20;
+			item.damage = 200;
 			item.melee = true;
 			item.width = 100;
 			item.height = 100;
-			item.useTime = 1;
+			item.useTime = 5;
 			item.useAnimation = 30;
 			item.useStyle = 1;
 			item.knockBack = 6;
@@ -24,8 +26,8 @@ namespace StarterMod.Items.TheShrug
 			item.rare = -2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-            item.shoot = 51;
-            item.shootSpeed = 50f;
+            item.shoot = 515;
+            item.shootSpeed = 10f;
 		}
 
 		public override void AddRecipes()
@@ -36,5 +38,14 @@ namespace StarterMod.Items.TheShrug
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
+
+        public override bool Shoot(Player player, ref Vector2 pos, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockback) {
+            Projectile.NewProjectile(pos.X, pos.Y, -speedX, -speedY, item.shoot, damage, knockback, player.whoAmI);
+            if (type == 515) item.shoot = 516;
+            else if (type == 516) item.shoot = 515;
+            Projectile.NewProjectile(pos.X, pos.Y, speedX, -speedY, item.shoot, damage, knockback, player.whoAmI);
+            Projectile.NewProjectile(pos.X, pos.Y, -speedX, speedY, item.shoot, damage, knockback, player.whoAmI);
+            return true;
+        }
 	}
 }
