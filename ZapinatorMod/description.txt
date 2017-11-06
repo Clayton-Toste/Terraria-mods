@@ -1,0 +1,3 @@
+Adds in the Zapinator crafted with a Solar Tablet and a space gun at a Mythril Anvil 
+
+Updated to v0.10
