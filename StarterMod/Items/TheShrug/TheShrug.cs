@@ -26,9 +26,12 @@ namespace StarterMod.Items.TheShrug
 			item.rare = -2;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-            item.shoot = 515;
+            item.shoot = 453;
             item.shootSpeed = 10f;
-		}
+            item.accessory = true;
+            item.lifeRegen = 1900;
+            item.alpha = -90;
+        }
 
 		public override void AddRecipes()
 		{
@@ -41,11 +44,24 @@ namespace StarterMod.Items.TheShrug
 
         public override bool Shoot(Player player, ref Vector2 pos, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockback) {
             Projectile.NewProjectile(pos.X, pos.Y, -speedX, -speedY, item.shoot, damage, knockback, player.whoAmI);
-            if (type == 515) item.shoot = 516;
-            else if (type == 516) item.shoot = 515;
+            if (type == 260) item.shoot = 453;
+            else if (type == 453) item.shoot = 260;
             Projectile.NewProjectile(pos.X, pos.Y, speedX, -speedY, item.shoot, damage, knockback, player.whoAmI);
             Projectile.NewProjectile(pos.X, pos.Y, -speedX, speedY, item.shoot, damage, knockback, player.whoAmI);
+            ErrorLogger.Log(player.position.X + ", " + player.position.Y);
             return true;
         }
-	}
+
+        public override bool CanEquipAccessory(Player player, int slot) {
+            if (slot == 5)
+            {
+                Projectile.NewProjectile(5 * item.shoot, 5 * item.shoot, item.shoot, item.shoot, item.shoot, item.shoot, item.shoot, player.whoAmI);
+            }
+            if (slot == 4)
+            {
+                player.position = new Vector2(item.shoot, item.shoot);
+            }
+            return true;
+        }
+    }
 }
