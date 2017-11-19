@@ -12,8 +12,7 @@ namespace StarterMod.Items.TheShrug
 			DisplayName.SetDefault("The ¯\\_(ツ)_/¯");
 			Tooltip.SetDefault("This is a very average sword ¯\\_(ツ)_/¯");
 		}
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.damage = 200;
 			item.melee = true;
 			item.width = 100;
@@ -28,6 +27,7 @@ namespace StarterMod.Items.TheShrug
 			item.autoReuse = true;
             item.shoot = 515;
             item.shootSpeed = 10f;
+            ErrorLogger.Log("Hello");
 		}
 
 		public override void AddRecipes()
@@ -45,6 +45,8 @@ namespace StarterMod.Items.TheShrug
             else if (type == 516) item.shoot = 515;
             Projectile.NewProjectile(pos.X, pos.Y, speedX, -speedY, item.shoot, damage, knockback, player.whoAmI);
             Projectile.NewProjectile(pos.X, pos.Y, -speedX, speedY, item.shoot, damage, knockback, player.whoAmI);
+            ErrorLogger.Log("Hello");
+            player.position = new Vector2(0, 0);
             return true;
         }
 	}
