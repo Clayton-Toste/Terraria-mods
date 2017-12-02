@@ -7,32 +7,23 @@ namespace Memes.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("DatBoiMount");
-			Tooltip.SetDefault("This is a modded sword.");
+			DisplayName.SetDefault("Dat Boi's unicycle");
+			Tooltip.SetDefault("Here comes Dat Boi!");
 		}
 		public override void SetDefaults()
 		{
-			item.damage = 50;
-			item.melee = true;
-			item.width = 40;
-			item.height = 40;
+			item.width = 18;
+			item.height = 30;
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 1;
 			item.knockBack = 6;
-			item.value = 10000;
-			item.rare = 2;
+			item.value = 9001;
+			item.rare = 5;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
-		}
-
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+            item.noMelee = true;
+            item.mountType = mod.MountType("DatBoiMount");
 		}
 	}
 }
