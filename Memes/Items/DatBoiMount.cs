@@ -20,7 +20,7 @@ namespace Memes.Items
 			item.knockBack = 6;
 			item.value = 9001;
 			item.rare = 5;
-			item.UseSound = SoundID.Item1;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/DatBoiS");
 			item.autoReuse = true;
             item.noMelee = true;
             item.mountType = mod.MountType("DatBoiMount");

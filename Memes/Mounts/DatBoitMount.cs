@@ -9,8 +9,8 @@ namespace Memes.Mounts
     {
         public override void SetDefaults()
         {
-            mountData.spawnDust = mod.DustType("DustName");
-            mountData.buff = mod.BuffType("MountBuff");
+            // mountData.spawnDust = mod.DustType("Smoke");
+            mountData.buff = mod.BuffType("DatBoiBuff");
             mountData.heightBoost = 20;          //how high is the mount from the ground
             mountData.fallDamage = 0.5f;
             mountData.runSpeed = 11f;
@@ -26,7 +26,7 @@ namespace Memes.Mounts
             int[] array = new int[mountData.totalFrames];
             for (int l = 0; l < array.Length; l++)
             {
-                array[l] = 1;
+                array[l] = 20;
             }
             mountData.playerYOffsets = array;
             mountData.xOffset = 13;                    
@@ -64,7 +64,7 @@ namespace Memes.Mounts
             if (Math.Abs(player.velocity.X) > 4f)
             {
                 Rectangle rect = player.getRect();
-                Dust.NewDust(new Vector2(rect.X, rect.Y), rect.Width, rect.Height, mod.DustType("DustName"));
+                //Dust.NewDust(new Vector2(rect.X, rect.Y), rect.Width, rect.Height, mod.DustType(""));
             }
         }
     }
