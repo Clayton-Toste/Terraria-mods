@@ -9,7 +9,7 @@ namespace Memes.Mounts
     {
         public override void SetDefaults()
         {
-            // mountData.spawnDust = mod.DustType("Smoke");
+            mountData.spawnDust = mod.DustType("Smoke");
             mountData.buff = mod.BuffType("DatBoiBuff");
             mountData.heightBoost = 20;          //how high is the mount from the ground
             mountData.fallDamage = 0.5f;

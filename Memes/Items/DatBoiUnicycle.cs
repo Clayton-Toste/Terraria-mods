@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Memes.Items
 {
-	public class DatBoiMount : ModItem
+	public class DatBoiUnicycle : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
