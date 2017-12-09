@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Memes.Items
 {
-    public class FullMetlaB : ModItem
+    public class FullMetalB : ModItem
     {
         public override void SetDefaults()
         {
