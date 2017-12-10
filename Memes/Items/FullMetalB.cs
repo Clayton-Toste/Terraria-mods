@@ -2,12 +2,13 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Memes.Items
-{
-    public class FullMetalB : ModItem
-    {
-        public override void SetDefaults()
-        {
+namespace Memes.Items {
+    public class FullMetalB : ModItem {
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("Full Metal Painting");
+            Tooltip.SetDefault("A Painting full of Metal");
+        }
+        public override void SetDefaults() {
             item.width = 30;
             item.height = 30;
             item.maxStack = 99;
@@ -17,8 +18,7 @@ namespace Memes.Items
             item.useTime = 10;
             item.useStyle = 1;
             item.consumable = true;
-            item.value = 7;
-            item.rare = 7;
+            item.rare = 1;
             item.createTile = mod.TileType("FullMetal");
             item.placeStyle = 0;
         }
