@@ -3,13 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
  
-namespace Memes.Mounts
-{
-    public class DatBoiMount : ModMountData
-    {
-        public override void SetDefaults()
-        {
-            mountData.spawnDust = mod.DustType("Smoke");
+namespace Memes.Mounts {
+    public class DatBoiMount : ModMountData {
+        public override void SetDefaults() {
+            mountData.spawnDust = Dust.lavaBubbles;
             mountData.buff = mod.BuffType("DatBoiBuff");
             mountData.heightBoost = 20;          //how high is the mount from the ground
             mountData.fallDamage = 0.5f;
@@ -24,8 +21,7 @@ namespace Memes.Mounts
             mountData.totalFrames = 1;            //mount frame/animation
             mountData.constantJump = true;
             int[] array = new int[mountData.totalFrames];
-            for (int l = 0; l < array.Length; l++)
-            {
+            for (int l = 0; l < array.Length; l++) {
                 array[l] = 20;
             }
             mountData.playerYOffsets = array;
@@ -52,17 +48,14 @@ namespace Memes.Mounts
             mountData.swimFrameCount = mountData.inAirFrameCount;
             mountData.swimFrameDelay = mountData.inAirFrameDelay;
             mountData.swimFrameStart = mountData.inAirFrameStart;
-            if (Main.netMode != 2)
-            {
+            if (Main.netMode != 2) {
                 mountData.textureWidth = mountData.frontTexture.Width + 20;
                 mountData.textureHeight = mountData.frontTexture.Height;
             }
         }
  
-        public override void UpdateEffects(Player player)
-        {
-            if (Math.Abs(player.velocity.X) > 4f)
-            {
+        public override void UpdateEffects(Player player) {
+            if (Math.Abs(player.velocity.X) > 4f) {
                 Rectangle rect = player.getRect();
                 //Dust.NewDust(new Vector2(rect.X, rect.Y), rect.Width, rect.Height, mod.DustType(""));
             }

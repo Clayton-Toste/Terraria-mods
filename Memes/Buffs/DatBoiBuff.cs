@@ -12,7 +12,7 @@ namespace Memes.Buffs {
         }
  
         public override void Update(Player player, ref int buffIndex) {
-            player.mount.SetMount(mod.MountType("DatBoiMount"), player);
+            player.mount.SetMount(mod.MountType<Mounts.DatBoiMount>(), player);
             player.buffTime[buffIndex] = 10;
         }
     }
