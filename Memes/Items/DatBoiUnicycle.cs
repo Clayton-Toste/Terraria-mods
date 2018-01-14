@@ -12,8 +12,8 @@ namespace Memes.Items
 		}
 		public override void SetDefaults()
 		{
-			item.width = 18;
-			item.height = 30;
+			item.width = 28;
+			item.height = 54;
 			item.useTime = 20;
 			item.useAnimation = 20;
 			item.useStyle = 1;

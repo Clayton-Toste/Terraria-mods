@@ -5,30 +5,35 @@ using Terraria.ModLoader;
  
 namespace Memes.Mounts {
     public class DatBoiMount : ModMountData {
+
+        public Random random = new Random();
+
         public override void SetDefaults() {
             mountData.spawnDust = Dust.lavaBubbles;
             mountData.buff = mod.BuffType("DatBoiBuff");
-            mountData.heightBoost = 20;          //how high is the mount from the ground
-            mountData.fallDamage = 0.5f;
-            mountData.runSpeed = 11f;
-            mountData.dashSpeed = 8f;
-            mountData.flightTimeMax = 300;
+            mountData.heightBoost = 0;          //how high is the mount from the ground
+            mountData.fallDamage = 0f;
+            mountData.runSpeed = 29f;
+            mountData.dashSpeed = 38f;
+            mountData.flightTimeMax = 0;
             mountData.fatigueMax = 0;
-            mountData.jumpHeight = 5;
+            mountData.jumpHeight = 200;
             mountData.acceleration = 0.19f;
-            mountData.jumpSpeed = 4f;
+            mountData.jumpSpeed = 40f;
             mountData.blockExtraJumps = false;
             mountData.totalFrames = 1;            //mount frame/animation
             mountData.constantJump = true;
             int[] array = new int[mountData.totalFrames];
             for (int l = 0; l < array.Length; l++) {
-                array[l] = 20;
+                array[l] = 50;
             }
             mountData.playerYOffsets = array;
             mountData.xOffset = 13;                    
             mountData.yOffset = 0;          //how high is the mount from the player
-            mountData.bodyFrame = 0;          //player frame when it's on the mount
-            mountData.playerHeadOffset = 220;        
+            mountData.bodyFrame = random.Next(0, 25);          //player frame when it's on the mount
+            mountData.playerHeadOffset = -3;
+            mountData.Minecart = true;
+            //mountData.MinecartDust = new Action<Vector2>(new Vector2(0,0));
             mountData.standingFrameCount = 1;
             mountData.standingFrameDelay = 12;
             mountData.standingFrameStart = 0;
@@ -57,6 +62,7 @@ namespace Memes.Mounts {
         public override void UpdateEffects(Player player) {
             if (Math.Abs(player.velocity.X) > 4f) {
                 Rectangle rect = player.getRect();
+                mountData.bodyFrame = random.Next(0, (int)player.bodyFrameCounter);
                 //Dust.NewDust(new Vector2(rect.X, rect.Y), rect.Width, rect.Height, mod.DustType(""));
             }
         }
