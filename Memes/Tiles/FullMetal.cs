@@ -15,7 +15,7 @@ namespace Memes.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.StyleWrapLimit = 36;
             TileObjectData.addTile(Type);
-            //dustType = 7;
+            dustType = 7;
             disableSmartCursor = true;
             ModTranslation name = CreateMapEntryName();
             AddMapEntry(new Color(120, 85, 60), name);

@@ -8,6 +8,7 @@ namespace Memes.Items {
             DisplayName.SetDefault("Full Metal Painting");
             Tooltip.SetDefault("A Painting full of Metal");
         }
+
         public override void SetDefaults() {
             item.width = 30;
             item.height = 30;
