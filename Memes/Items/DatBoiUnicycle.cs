@@ -1,4 +1,4 @@
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Memes.Items
@@ -8,7 +8,7 @@ namespace Memes.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Dat Boi's unicycle");
-			Tooltip.SetDefault("Here comes Dat Boi!");
+			Tooltip.SetDefault("Here comes Dat Boi!, ゆめ２っきver0.106");
 		}
 		public override void SetDefaults()
 		{
