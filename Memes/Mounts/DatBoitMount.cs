@@ -27,7 +27,7 @@ namespace Memes.Mounts {
             for (int l = 0; l < array.Length; l++) {
                 array[l] = 50;
             }
-            mountData.playerYOffsets = array;
+            mountData.playerYOffsets = array;   
             mountData.xOffset = 13;
             mountData.yOffset = 20;          //how high is the mount from the player
             mountData.bodyFrame = random.Next(0, 25);          //player frame when it's on the mount
