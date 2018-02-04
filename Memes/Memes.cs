@@ -15,8 +15,11 @@ namespace Memes {
              if (Main.myPlayer != -1 && !Main.gameMenu) {
                  if (Main.player[Main.myPlayer].active && (Main.LocalPlayer.FindBuffIndex(BuffType("DatBoiBuff")) != -1) {
                     music = GetSoundSlot(SoundType.Music, "Sounds/DatBoiS");
+                 }
+                if (Main.player[Main.myPlayer].active && (Main.LocalPlayer.sandStorm) {
+                    music = GetSoundSlot(SoundType.Music, "Sounds/Darude");
                 }
-             }
+            }
          }
     }
 }
