@@ -32,8 +32,6 @@ namespace Memes.Mounts {
             mountData.yOffset = 20;          //how high is the mount from the player
             mountData.bodyFrame = random.Next(0, 25);          //player frame when it's on the mount
             mountData.playerHeadOffset = 22;
-            //mountData.Minecart = true;
-            //mountData.MinecartDust = new Action<Vector2>(new Vector2(0,0));
             mountData.standingFrameCount = 1;
             mountData.standingFrameDelay = 12;
             mountData.standingFrameStart = 0;
