@@ -11,7 +11,7 @@ namespace Memes.Mounts {
         public override void SetDefaults() {
             mountData.spawnDust = Dust.lavaBubbles;
             mountData.buff = mod.BuffType("DatBoiBuff");
-            mountData.heightBoost = 0;          //how high is the mount from the ground
+            mountData.heightBoost = 50;          //How much the player is boosted in the vertical axis when mounted.
             mountData.fallDamage = 0f;
             mountData.runSpeed = 29f;
             mountData.dashSpeed = 38f;
@@ -27,19 +27,11 @@ namespace Memes.Mounts {
             for (int l = 0; l < array.Length; l++) {
                 array[l] = 50;
             }
-            mountData.playerYOffsets = array;
-            mountData.xOffset = 13;                    
-<<<<<<< HEAD
-            mountData.yOffset = -3;          //how high is the mount from the player
-            mountData.bodyFrame = 0;          //player frame when it's on the mount
-            mountData.playerHeadOffset = 22;        
-=======
-            mountData.yOffset = 0;          //how high is the mount from the player
+            mountData.playerYOffsets = array;   
+            mountData.xOffset = 13;
+            mountData.yOffset = 20;          //how high is the mount from the player
             mountData.bodyFrame = random.Next(0, 25);          //player frame when it's on the mount
-            mountData.playerHeadOffset = -3;
-            mountData.Minecart = true;
-            //mountData.MinecartDust = new Action<Vector2>(new Vector2(0,0));
->>>>>>> faef8ee7b94873bd4772798895724d3cb276feca
+            mountData.playerHeadOffset = 22;
             mountData.standingFrameCount = 1;
             mountData.standingFrameDelay = 12;
             mountData.standingFrameStart = 0;
@@ -70,6 +62,9 @@ namespace Memes.Mounts {
                 Rectangle rect = player.getRect();
                 mountData.bodyFrame = random.Next(0, (int)player.bodyFrameCounter);
                 //Dust.NewDust(new Vector2(rect.X, rect.Y), rect.Width, rect.Height, mod.DustType(""));
+                //if (Main.rand.Next(3) == 0) {
+                    //Projectile.NewProjectile(player.position.X, player.position.Y, player.velocity.X/2, -2, Main.rand.Next(Terraria.ID.ProjectileID.DD2Win) + 1, 30, 0, player.whoAmI);
+                //}
             }
         }
     }
