@@ -4,13 +4,16 @@ using Terraria.ModLoader;
 
 namespace Memes.Items {
     public class VRChat : ModItem {
+
+        public override void SetStaticDefaults() {
+            DisplayName.SetDefault("VRChat");
+            Tooltip.SetDefault("Welcome, player. If you encounter and annoying user...");
+        }
         
         public override void SetDefaults() {
-            item.name = "VRChat";
             item.width = 20;
             item.height = 20;
             item.maxStack = 999;
-            AddTooltip("I wonder what this thing does?");
             item.value = 100;
             item.rare = 1;
             item.useAnimation = 30;
