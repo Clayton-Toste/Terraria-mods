@@ -1,2 +1,2 @@
 # Terraria-mods
-NATE
+Collection of Terraria mods built with Nate
